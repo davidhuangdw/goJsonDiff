@@ -9,11 +9,11 @@ func TestDiff(t *testing.T) {
 	jd := &JsonDiffer{}
 
 	tests := []struct {
-		name     string
-		from     types.JsonValue
-		to       types.JsonValue
-		checkOp  types.Operation
-		wantErr  bool
+		name    string
+		from    types.JsonValue
+		to      types.JsonValue
+		checkOp types.Operation
+		wantErr bool
 	}{
 		{
 			name:    "equal primitives",
@@ -262,7 +262,7 @@ func TestDiff_ComplexValidation(t *testing.T) {
 			t.Fatalf("Diff() error = %v", err)
 		}
 
-		deltaSlice, ok := delta.([]types.Delta)
+		deltaSlice, ok := delta.([]types.ArrayItemDelta)
 		if !ok {
 			t.Fatalf("Expected []Delta, got %T", delta)
 		}
@@ -306,7 +306,7 @@ func TestDiff_ComplexValidation(t *testing.T) {
 			t.Fatalf("Expected data to be map[string]Delta")
 		}
 
-		itemsSlice, ok := dataMap["items"].([]types.Delta)
+		itemsSlice, ok := dataMap["items"].([]types.ArrayItemDelta)
 		if !ok {
 			t.Fatalf("Expected items to be []Delta")
 		}

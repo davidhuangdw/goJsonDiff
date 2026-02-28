@@ -1,0 +1,162 @@
+{
+    "category": {
+        "Op": 3,
+        "Value": "dwarf planet",
+        "ValueFrom": "planet"
+    },
+    "composition": [
+        {
+            "Delta": {
+                "+": {
+                    "Op": 1,
+                    "Value": 9,
+                    "ValueFrom": null
+                },
+                "x": {
+                    "Op": 0,
+                    "Value": 1,
+                    "ValueFrom": null
+                },
+                "y": {
+                    "Op": 3,
+                    "Value": 3,
+                    "ValueFrom": 2
+                }
+            },
+            "Index": 0,
+            "IndexFrom": 0
+        },
+        {
+            "Delta": {
+                "Op": 1,
+                "Value": "foo",
+                "ValueFrom": null
+            },
+            "Index": 1,
+            "IndexFrom": -1
+        },
+        {
+            "Delta": {
+                "Op": 0,
+                "Value": "methane",
+                "ValueFrom": null
+            },
+            "Index": 2,
+            "IndexFrom": 1
+        },
+        {
+            "Delta": {
+                "Op": 0,
+                "Value": null,
+                "ValueFrom": null
+            },
+            "Index": 3,
+            "IndexFrom": 2
+        },
+        {
+            "Delta": {
+                "Op": 0,
+                "Value": "nitrogen",
+                "ValueFrom": null
+            },
+            "Index": 4,
+            "IndexFrom": 3
+        },
+        {
+            "Delta": {
+                "Op": 2,
+                "Value": "hi",
+                "ValueFrom": null
+            },
+            "Index": -1,
+            "IndexFrom": 4
+        },
+        {
+            "Delta": {
+                "Op": 2,
+                "Value": "bar",
+                "ValueFrom": null
+            },
+            "Index": -1,
+            "IndexFrom": 5
+        },
+        {
+            "Delta": {
+                "Op": 0,
+                "Value": {
+                    "a": 1,
+                    "b": 2,
+                    "c": 3
+                },
+                "ValueFrom": null
+            },
+            "Index": 5,
+            "IndexFrom": 6
+        },
+        {
+            "Delta": {
+                "Op": 1,
+                "Value": 1,
+                "ValueFrom": null
+            },
+            "Index": 6,
+            "IndexFrom": -1
+        }
+    ],
+    "deep": {
+        "ad": {
+            "Op": 1,
+            "Value": null,
+            "ValueFrom": null
+        },
+        "kp": {
+            "rm": {
+                "Op": 2,
+                "Value": 2,
+                "ValueFrom": null
+            },
+            "sub_ign": {
+                "Op": 3,
+                "Value": 999,
+                "ValueFrom": [
+                    1,
+                    2
+                ]
+            },
+            "x": {
+                "Op": 0,
+                "Value": 1,
+                "ValueFrom": null
+            }
+        },
+        "rp": {
+            "Op": 3,
+            "Value": 9,
+            "ValueFrom": {
+                "x": 100
+            }
+        }
+    },
+    "name": {
+        "Op": 0,
+        "Value": "Pluto",
+        "ValueFrom": null
+    },
+    "number": {
+        "Op": 0,
+        "Value": 1,
+        "ValueFrom": null
+    },
+    "to_remove": {
+        "Op": 2,
+        "Value": {
+            "a": 1
+        },
+        "ValueFrom": null
+    },
+    "to_replace": {
+        "Op": 3,
+        "Value": 999,
+        "ValueFrom": "foo"
+    }
+}

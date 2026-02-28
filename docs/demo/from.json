@@ -1,0 +1,24 @@
+{
+  "name": "Pluto",
+  "number": 1.0,
+  "category": "planet",
+  "to_replace": "foo",
+  "to_remove": {"a": 1},
+  "composition": [
+    {"x":  1, "y": 2},
+    "methane",
+    null,
+    "nitrogen",
+    "hi",
+    "bar",
+    {"a": 1, "b": 2, "c":  3}
+  ],
+  "deep": {
+    "rp": {"x": 100},
+    "kp": {
+      "rm": 2,
+      "x": 1,
+      "sub_ign": [1, 2]
+    }
+  }
+}

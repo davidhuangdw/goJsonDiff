@@ -8,17 +8,25 @@ const (
 	ADD
 	REMOVE
 	REPLACE
-	//MOVE
-	//IGNORED
 )
 
-type DeltaLeaf struct {
-	Op        Operation
-	Value     JsonValue
-	ValueFrom JsonValue
-	//KeyFrom   any // for 'MOVE' case, nil | int | string,
+type Delta interface {
+	// *DeltaLeaf | map[string]Delta | []ArrayItemDelta==[]{origin_index, Delta}
 }
 
-type Delta interface {
-	// *DeltaLeaf | []Delta | map[string]Delta
+type DeltaLeaf struct {
+	Op               Operation
+	Value, ValueFrom JsonValue
+}
+
+type ArrayItemDelta struct { // to store original index
+	Delta            Delta
+	Index, IndexFrom int // index in original array
+}
+
+func IsEqual(delta Delta) bool {
+	if leaf, ok := delta.(*DeltaLeaf); ok {
+		return leaf.Op == EQUAL
+	}
+	return false
 }

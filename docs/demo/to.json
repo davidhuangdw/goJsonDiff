@@ -1,0 +1,23 @@
+{
+  "name": "Pluto",
+  "number": 1.0,
+  "category": "dwarf planet",
+  "to_replace": 999,
+  "composition": [
+    {"x": 1, "+":9, "y": 3},
+    "foo",
+    "methane",
+    null,
+    "nitrogen",
+    {"a": 1, "b": 2, "c":  3},
+    1
+  ],
+  "deep": {
+    "rp": 9,
+    "ad": null,
+    "kp": {
+      "x": 1,
+      "sub_ign": 999
+    }
+  }
+}
