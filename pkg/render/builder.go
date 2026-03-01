@@ -1,8 +1,9 @@
 package render
 
 import (
-	"goJsonDiff/pkg/render/style"
 	"strings"
+
+	"github.com/davidhuangdw/goJsonDiff/pkg/render/style"
 )
 
 func NewConsoleView() DeltaView {
@@ -19,4 +20,8 @@ func NewHtmlView() DeltaView {
 		Format:  style.HtmlFormat,
 		Style:   &style.HtmlStyle{},
 	}
+}
+
+func NewJsonPatchView() DeltaView {
+	return &JsonPatchView{}
 }

@@ -4,16 +4,17 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"goJsonDiff/pkg/diff"
-	"goJsonDiff/pkg/render"
 	"os"
 	"time"
+
+	"github.com/davidhuangdw/goJsonDiff/pkg/diff"
+	"github.com/davidhuangdw/goJsonDiff/pkg/render"
 
 	"github.com/logrusorgru/aurora/v4"
 )
 
 func main() {
-	fFormat := flag.String("f", "console", "Format: console, html, ...")
+	fFormat := flag.String("f", "console", "Format: console, html, patch, ...")
 	fDebug := flag.Bool("debug", false, "debug bool: show timing & extra info")
 
 	flag.Usage = func() {
@@ -58,6 +59,8 @@ func main() {
 		view = render.NewHtmlView()
 	case "console":
 		view = render.NewConsoleView()
+	case "patch":
+		view = render.NewJsonPatchView()
 	default:
 		fatal(fmt.Sprintf("invalid input: unknown formatterType: %s", *fFormat))
 	}

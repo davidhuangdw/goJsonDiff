@@ -3,8 +3,9 @@ package diff
 import (
 	"encoding/json"
 	"fmt"
-	. "goJsonDiff/pkg/types"
 	"reflect"
+
+	. "github.com/davidhuangdw/goJsonDiff/pkg/types"
 )
 
 type JsonDiffer struct {
@@ -140,6 +141,6 @@ func (jd *JsonDiffer) diff(from, to JsonValue, frHash, toHash *HashTree) (Delta,
 		}
 		return delta, nil
 	default:
-		return nil, nil
+		return nil, fmt.Errorf("unexpected json value type from %#v to %#v", from, to)
 	}
 }

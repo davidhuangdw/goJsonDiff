@@ -1,4 +1,4 @@
-module goJsonDiff
+module github.com/davidhuangdw/goJsonDiff
 
 go 1.25
 

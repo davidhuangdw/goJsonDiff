@@ -1,7 +1,7 @@
 package diff
 
 import (
-	"goJsonDiff/pkg/types"
+	"github.com/davidhuangdw/goJsonDiff/pkg/types"
 	"testing"
 )
 

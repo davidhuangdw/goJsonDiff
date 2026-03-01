@@ -3,9 +3,10 @@ package render
 import (
 	"encoding/json"
 	"fmt"
-	"goJsonDiff/pkg/render/style"
-	. "goJsonDiff/pkg/types"
 	"strings"
+
+	"github.com/davidhuangdw/goJsonDiff/pkg/render/style"
+	. "github.com/davidhuangdw/goJsonDiff/pkg/types"
 )
 
 const KEY_SEP = ": "
@@ -17,8 +18,8 @@ type StyleView struct {
 }
 
 func (st *StyleView) Render(delta Delta) (string, error) {
-	err := st.renderDeltaTree(delta, nil, "", false)
-	if err != nil {
+	st.Builder.Reset()
+	if err := st.renderDeltaTree(delta, nil, "", false); err != nil {
 		return "", err
 	}
 
@@ -67,6 +68,8 @@ func (st *StyleView) renderDeltaTree(delta Delta, path []any, key string, isLast
 			st.write(REPLACE, " => ")
 			st.write(ADD, string(toVal))
 			st.write(REPLACE, comma)
+		default:
+			return fmt.Errorf("unknown DeltaLeaf.Op: %#v", dlt)
 		}
 	case []ArrayItemDelta:
 		st.WriteString(key + "[\n")

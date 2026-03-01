@@ -2,7 +2,8 @@ package diff
 
 import (
 	"fmt"
-	"goJsonDiff/pkg/types"
+
+	"github.com/davidhuangdw/goJsonDiff/pkg/types"
 
 	"github.com/zeebo/xxh3"
 )

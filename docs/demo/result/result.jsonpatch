@@ -1,0 +1,111 @@
+[
+    {
+        "op": "replace",
+        "path": "/category",
+        "value": "dwarf planet"
+    },
+    {
+        "op": "replace",
+        "path": "/to_replace",
+        "value": 999
+    },
+    {
+        "op": "remove",
+        "path": "/to_remove",
+        "value": {
+            "a": 1
+        }
+    },
+    {
+        "op": "add",
+        "path": "/composition/0/+",
+        "value": 9
+    },
+    {
+        "op": "test",
+        "path": "/composition/0/x",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/composition/0/y",
+        "value": 3
+    },
+    {
+        "op": "add",
+        "path": "/composition/1",
+        "value": "foo"
+    },
+    {
+        "op": "test",
+        "path": "/composition/1",
+        "value": "methane"
+    },
+    {
+        "op": "test",
+        "path": "/composition/2"
+    },
+    {
+        "op": "test",
+        "path": "/composition/3",
+        "value": "nitrogen"
+    },
+    {
+        "op": "remove",
+        "path": "/composition/4",
+        "value": "hi"
+    },
+    {
+        "op": "remove",
+        "path": "/composition/5",
+        "value": "bar"
+    },
+    {
+        "op": "test",
+        "path": "/composition/6",
+        "value": {
+            "a": 1,
+            "b": 2,
+            "c": 3
+        }
+    },
+    {
+        "op": "add",
+        "path": "/composition/6",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/deep/rp",
+        "value": 9
+    },
+    {
+        "op": "test",
+        "path": "/deep/kp/x",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/deep/kp/sub_ign",
+        "value": 999
+    },
+    {
+        "op": "remove",
+        "path": "/deep/kp/rm",
+        "value": 2
+    },
+    {
+        "op": "add",
+        "path": "/deep/ad"
+    },
+    {
+        "op": "test",
+        "path": "/name",
+        "value": "Pluto"
+    },
+    {
+        "op": "test",
+        "path": "/number",
+        "value": 1
+    }
+]

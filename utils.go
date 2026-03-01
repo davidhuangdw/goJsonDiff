@@ -1,37 +1,25 @@
 package goJsonDiff
 
 import (
-	"goJsonDiff/pkg/diff"
-	"goJsonDiff/pkg/render"
-	"goJsonDiff/pkg/types"
+	"github.com/davidhuangdw/goJsonDiff/pkg/diff"
+	"github.com/davidhuangdw/goJsonDiff/pkg/render"
+	. "github.com/davidhuangdw/goJsonDiff/pkg/types"
 )
 
-func ConsoleDiff(fromJson, toJson string) (string, error) {
-	delta, err := DiffJsonStr(fromJson, toJson)
-	if err != nil {
-		return "", err
-	}
-
-	view := render.NewConsoleView()
-	consoleStr, err := view.Render(delta)
-	return consoleStr, err
-}
-
-func HtmlDiff(fromJson, toJson string) (string, error) {
-	delta, err := DiffJsonStr(fromJson, toJson)
-	if err != nil {
-		return "", err
-	}
-
-	view := render.NewHtmlView()
-	htmlStr, err := view.Render(delta)
-	return htmlStr, err
-}
-
-func DiffJson(from, to types.JsonValue) (types.Delta, error) {
+func DiffJson(from, to JsonValue) (Delta, error) {
 	return (&diff.JsonDiffer{}).Diff(from, to)
 }
 
-func DiffJsonStr(from, to string) (types.Delta, error) {
+func DiffJsonStr(from, to string) (Delta, error) {
 	return (&diff.JsonDiffer{}).DiffJsonStr(from, to)
+}
+
+func RenderConsole(delta Delta) (string, error) {
+	return render.NewConsoleView().Render(delta)
+}
+func RenderHtml(delta Delta) (string, error) {
+	return render.NewHtmlView().Render(delta)
+}
+func RenderJsonPatch(delta Delta) (string, error) {
+	return render.NewJsonPatchView().Render(delta)
 }

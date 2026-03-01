@@ -1,6 +1,6 @@
 package style
 
-import . "goJsonDiff/pkg/types"
+import . "github.com/davidhuangdw/goJsonDiff/pkg/types"
 
 type Format struct {
 	Indent    string

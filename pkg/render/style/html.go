@@ -1,7 +1,7 @@
 package style
 
 import (
-	. "goJsonDiff/pkg/types"
+	. "github.com/davidhuangdw/goJsonDiff/pkg/types"
 )
 
 var (
